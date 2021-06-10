@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Panda</title>
+</head>
+<body>
+    <div class="container">
+        <p> This is an edit panda page!</p>
+
+    </div>
+    <form action="/pandas/{{this_panda.id}}/update" method="POST">
+        {% csrf_token %}
+        <label for="panda_name">Name</label>
+        <input name="panda_name" type="text" value="{{this_panda.name}}">
+        <!-- same as request.post['panda.name'] -->
+        <label for="age">Age</label>
+        <input name="age" type="number" value="{{this_panda.age}}">
+        <label for="sex">Sex</label>
+        <select name='sex' id=''>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <input type="submit" value="Edit Panda">
+    </form>
+    
+</body>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda Tracker Home</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Panda Tracker</h1>
+        <a href="/pandas/new">Add a new panda</a>
+    </div>
+    <div class="table">
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>ACtion</th>
+
+            </thead>
+            <tbody>
+                {% for panda in all_pandas %}
+                    <tr>
+                        <td>{{panda.name}}</td>
+                        <td>{{panda.age}}</td>
+                        <td>{{panda.sex}}</td>
+                        <td><a href='/pandas/{{panda.id}}'>Show</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
